@@ -13,6 +13,7 @@ body {
     height: 100vh;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .box {
@@ -24,10 +25,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
+    max-width: 400px;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: clamp(24px, 8vw, 40px);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -37,47 +40,58 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 15px;
+}
 
-    .btnMais, .btnMenos {
-        width: 70px;
-        height: 70px;
-        font-size: 40px;
-        border-radius: 20px;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.box-contadores .btnMais, 
+.box-contadores .btnMenos {
+    width: clamp(50px, 15vw, 70px);
+    height: clamp(50px, 15vw, 70px);
+    font-size: clamp(25px, 6vw, 40px);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .btnMais{
-        background: #1e4610;
-    }
-    .btnMenos{
-        background: #5b0000;
-    }
+.box-contadores .btnMais {
+    background: #1e4610;
+}
 
-    .box-num {
-        background: rgb(15, 15, 15);
-        width: 100px;
-        height: 110px;
-        font-size: 50px;
-        border-radius: 25px;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.box-contadores .btnMenos {
+    background: #5b0000;
+}
+
+.box-contadores .box-num {
+    background: rgb(15, 15, 15);
+    width: clamp(80px, 20vw, 100px);
+    height: clamp(90px, 22vw, 110px);
+    font-size: clamp(35px, 10vw, 50px);
+    border-radius: 25px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btnReset {
-    background: #5b0000; /* Vermelho escuro da imagem */
+    background: #5b0000;
     border: none;
     width: 100%;
     height: 60px;
     border-radius: 20px;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+@media (max-width: 350px) {
+    .box {
+        padding: 20px;
+    }
+    .box-contadores {
+        gap: 10px;
+    }
 }
